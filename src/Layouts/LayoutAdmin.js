@@ -7,13 +7,13 @@ import { Layout } from 'antd';
 import { LoadRoutes } from '../shared/components';
 
 // Components Admin
-import { MenuTop } from '../Pages/Admin/components';
+import { MenuTop, MenuSider } from '../Pages/Admin/components';
 
 function LayoutAdmin({routes}) {
     const { Header, Content, Footer } = Layout;
     return(
         <Layout>
-            {/* TO DO: Menu Sider */}
+            <MenuSider />
             <Layout className="layout-admin">
                 <Header className="layout-admin__header">
                     <MenuTop />
