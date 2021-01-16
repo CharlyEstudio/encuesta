@@ -6,10 +6,10 @@ import { HomeOutlined } from '@ant-design/icons';
 
 import './MenuSider.scss';
 
-function MenuSider() {
+function MenuSider({menuCollapsed}) {
     const {Sider} = Layout;
     return(
-        <Sider className="admin-sider">
+        <Sider className="admin-sider" collapsed={menuCollapsed}>
             <Menu
                 theme="dark"
                 mode="inline"
