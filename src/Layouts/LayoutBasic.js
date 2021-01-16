@@ -4,7 +4,7 @@ import { Layout } from "antd";
 function LayoutBasic() {
     return(
         <Layout>
-            <h2>Menu Sider</h2>
+            <h2>Menu Sider Basic</h2>
             <div>
                 Content...
             </div>

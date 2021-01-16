@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 function LayoutAdmin() {
     return(
         <Layout>
-            <h2>Menu Sider</h2>
+            <h2>Menu Sider Admin</h2>
             <div>
                 Contenido...
             </div>
