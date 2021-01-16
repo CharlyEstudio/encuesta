@@ -1,9 +1,10 @@
-import { Route } from 'react-router-dom';
-
 import './LayoutAdmin.scss';
 
 // AntD
 import { Layout } from 'antd';
+
+// Components
+import { LoadRoutes } from '../shared/components';
 
 function LayoutAdmin({routes}) {
     const { Header, Content, Footer } = Layout;
@@ -21,17 +22,6 @@ function LayoutAdmin({routes}) {
             </Layout>
         </Layout>
     );
-}
-
-function LoadRoutes({routes}) {
-    return routes.map((route, index) => (
-        <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-        />
-    ));
 }
 
 export default LayoutAdmin;
