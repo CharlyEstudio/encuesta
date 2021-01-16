@@ -1,1 +1,51 @@
+$defaultFontSize: 16px;
+
+// Primary Colors
 $primary-color: #0098d3;
+$primary-color-hover: #0280b3;
+$success: #84b84c;
+$warning: orange;
+$error: #f00;
+
+// Colors Menú
+$menu-color: #fff;
+
+// Font Colors
+$font-light: #fff;
+$font-grey-light: #e8e8e8;
+$font-grey: #808080;
+$font-grey-dark: #000;
+$font-dark-light: #252527;
+$font-dark: #000;
+
+// Border Colors
+$border-light: #fff;
+$border-grey-light: #e8e8e8;
+$border-grey: #808080;
+$border-grey-dark: #595959;
+$border-dark-light: #252527;
+$border-dark: #000;
+
+// Background Colors
+$background-light: #fff;
+$background-grey-light: #e8e8e8;
+$background-grey: #808080;
+$background-grey-dark: #595959;
+$background-dark-light: #252527;
+$background-dark: #000;
+$background-error: #ff00001f;
+$background-success: #84b84c1f;
+
+// Responsive Down Size
+$media-breack-point-down-xs: 413.98px;
+$media-breack-point-down-sm: 573.98px;
+$media-breack-point-down-md: 767.98px;
+$media-breack-point-down-lg: 991.98px;
+$media-breack-point-down-xl: 1199.98px;
+
+// Responsive Up Size
+$media-breack-point-up-xs: 320px;
+$media-breack-point-up-sm: 576px;
+$media-breack-point-up-md: 768px;
+$media-breack-point-up-lg: 992px;
+$media-breack-point-up-xl: 1200px;
