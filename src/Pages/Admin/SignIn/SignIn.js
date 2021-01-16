@@ -1,5 +1,8 @@
 import { Layout, Tabs } from 'antd';
 
+// Components
+import { RegisterForm } from '../components';
+
 // Logo
 import Logo from '../../../assets/logo/logo.jpg';
 
@@ -24,7 +27,7 @@ function SignIn() {
                             Componente LoginForm
                         </TabPane>
                         <TabPane tab={<span>Nuevo Usuario</span>} key="2">
-                            Componente RegisterForm
+                            <RegisterForm />
                         </TabPane>
                     </Tabs>
                 </div>
