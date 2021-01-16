@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
 import './LayoutAdmin.scss';
 
@@ -10,10 +11,24 @@ import { LoadRoutes } from '../shared/components';
 
 // Components Admin
 import { MenuTop, MenuSider } from '../Pages/Admin/components';
+import { SignIn } from '../Pages/Admin';
 
 function LayoutAdmin({routes}) {
     const [menuCollapsed, setMenuCollapsed] = useState(false);
     const { Header, Content, Footer } = Layout;
+
+    const user = null;
+
+    if (!user) {
+        return(
+            <>
+                <Route
+                    path="/admin/login" component={SignIn}
+                />
+                <Redirect to="/admin/login" />
+            </>
+        );
+    }
 
     return(
         <Layout
