@@ -3,20 +3,25 @@ import './LayoutAdmin.scss';
 // AntD
 import { Layout } from 'antd';
 
-// Components
+// Components Globals
 import { LoadRoutes } from '../shared/components';
+
+// Components Admin
+import { MenuTop } from '../Pages/Admin/components';
 
 function LayoutAdmin({routes}) {
     const { Header, Content, Footer } = Layout;
     return(
         <Layout>
-            <h2>Menu Sider Admin</h2>
-            <Layout>
-                <Header>Header</Header>
-                <Content>
+            {/* TO DO: Menu Sider */}
+            <Layout className="layout-admin">
+                <Header className="layout-admin__header">
+                    <MenuTop />
+                </Header>
+                <Content className="layout-admin__content">
                     <LoadRoutes routes={routes} />
                 </Content>
-                <Footer>
+                <Footer className="layout-admin__footer">
                     Encuestas Hola Mundo
                 </Footer>
             </Layout>
