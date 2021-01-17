@@ -22,6 +22,9 @@ function Loginform() {
     const login = () => {
         // TO DO: Hacer login con el backend
         console.log(inputs);
+        notification.success({
+            message: 'Usuario Conectado'
+        });
     };
 
     return(
