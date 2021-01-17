@@ -79,12 +79,12 @@ function RegisterForm() {
                         notification.success({
                             message: 'Usuario creado correctamente'
                         });
+                        resetForm();
                     } else {
                         notification.error({
                             message: resp.message
                         });
                     }
-                    resetForm();
                 }
             }
         }
