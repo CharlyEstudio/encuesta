@@ -7,6 +7,9 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 // Utils
 import { emailValidation, minLengthValidation, removeClassError } from '../../../../utils/formValidation';
 
+// API
+import { signUpApi } from '../../../../api/user-api';
+
 import './RegisterForm.scss';
 
 function RegisterForm() {
@@ -50,7 +53,7 @@ function RegisterForm() {
         });
     };
 
-    const register = () => {
+    const register = async () => {
         const emailVal = formValid.email;
         const passwordVal = formValid.password;
         const repeatPasswordVal = formValid.repeatPassword;
@@ -71,11 +74,16 @@ function RegisterForm() {
                         message: 'No ha aceptado las políticas de privacidad.'
                     });
                 } else {
-                    // TO DO: Conectar con la API y registrar usuario
-                    console.log(inputs);
-                    notification.success({
-                        message: 'Usuario creado correctamente'
-                    });
+                    const resp = await signUpApi(inputs);
+                    if (resp.status) {
+                        notification.success({
+                            message: 'Usuario creado correctamente'
+                        });
+                    } else {
+                        notification.error({
+                            message: resp.message
+                        });
+                    }
                     resetForm();
                 }
             }
