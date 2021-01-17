@@ -1,7 +1,7 @@
 import { Layout, Tabs } from 'antd';
 
 // Components
-import { RegisterForm } from '../components';
+import { RegisterForm, LoginForm } from '../components';
 
 // Logo
 import Logo from '../../../assets/logo/logo.jpg';
@@ -24,7 +24,7 @@ function SignIn() {
                 <div className="sign-in__content__tabs">
                     <Tabs type="card">
                         <TabPane tab={<span>Entrar</span>} key="1">
-                            Componente LoginForm
+                            <LoginForm />
                         </TabPane>
                         <TabPane tab={<span>Nuevo Usuario</span>} key="2">
                             <RegisterForm />
