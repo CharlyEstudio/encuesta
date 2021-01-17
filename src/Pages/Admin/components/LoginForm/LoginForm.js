@@ -6,6 +6,9 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 import './LoginForm.scss';
 
+// API
+import { signInUp } from '../../../../api/user-api';
+
 function Loginform() {
     const [inputs, setInputs] = useState({
         email: '',
@@ -19,12 +22,19 @@ function Loginform() {
         });
     };
 
-    const login = () => {
-        // TO DO: Hacer login con el backend
-        console.log(inputs);
-        notification.success({
-            message: 'Usuario Conectado'
-        });
+    const login = async () => {
+        const resp = await signInUp(inputs);
+        if (resp.status) {
+            notification.success({
+                message: 'Usuario Conectado'
+            });
+            // Redirigir al panel de administración
+            window.location.href('/admin');
+        } else {
+            notification.error({
+                message: resp.message
+            });
+        }
     };
 
     return(
