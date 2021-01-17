@@ -1,4 +1,5 @@
 import { basePath, apiVersion } from './config';
+import axios from 'axios';
 import { getTokenLocalStorageAPI, getRefreshTokenLocalStoraAPI } from '../utils/localStorageApi';
 import jwtDecode from 'jwt-decode';
 
@@ -18,6 +19,20 @@ export function getRefreshToken() {
     }
 
     return withExpiredToken(refreshToken) ? null : refreshToken;
+}
+
+export async function refreshAccessToken(refreshToken) {
+    const url = `${basePath}/${apiVersion}/refresh-access-token`;
+    const body = {
+        refreshToken
+    };
+
+    try {
+        const {data} = await axios.post(url, body);
+        return data;
+    } catch (e) {
+        return { status: false, message: e.message }
+    }
 }
 
 function withExpiredToken(token) {
