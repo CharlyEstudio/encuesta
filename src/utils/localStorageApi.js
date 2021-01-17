@@ -13,6 +13,14 @@ export function getLocalStorageAPI() {
     };
 }
 
+export function getTokenLocalStorageAPI() {
+    return localStorage.getItem(ACCESS_TOKEN);
+}
+
+export function getRefreshTokenLocalStoraAPI() {
+    return localStorage.getItem(REFRESH_TOKEN);
+}
+
 export function deleteLocalStoraAPI() {
     localStorage.clear();
 }
